@@ -3,12 +3,11 @@ const fileUpload = require("express-fileupload");
 const porn_filter = require("./porn_filter");
 
 const app = express();
-const port = 8080;
+const port = 8001;
 
 app.use(fileUpload());
 
-// TODO(jan): Production should be process.env.PORT cus of Heroku
-const server = app.listen(port, () => {
+const server = app.listen(process.env.PORT, () => {
   console.log(`Listening at -> http://localhost:${server.address().port}`);
 });
 
